@@ -1,0 +1,2 @@
+My name is Bohao Wang and i am in the CSC 453. i designed a ruby document called WangEnumerable.rb , which used module to handle those iterators. i used each method as iterator, with some external iterator and internal iterator.
+Those iterators have been transfered into the Triple.rb document to test. All those iterators have been tested and got a good performance. You can run the Triple.rb to test those iterators.
