@@ -1,6 +1,6 @@
 
  module WangEnumerable
-    def my_all
+    def all?
     a = true
 
      each do |i|
@@ -16,7 +16,7 @@
 
 
 
-  def my_any
+  def any?
     result = true
 
     each do |i|
@@ -30,7 +30,7 @@
   end
 
 
-    def my_chunk
+    def chunk
       result1=yield first
       arr=Array.new
       arr1=Array.new
@@ -50,7 +50,7 @@
 
 
 
-   def my_collect
+   def collect
 
      arr = Array.new
 
@@ -73,7 +73,7 @@
 
 
 
-   def my_count (position = nil, &blk)
+   def count (position = nil, &blk)
 
      length = 0
 
@@ -111,7 +111,7 @@
 
 
 
-  def my_cycle (number)
+  def cycle (number)
 
     for a in 1..number
 
@@ -129,7 +129,7 @@
   end
 
 
-   def my_detect
+   def detect
      each do |i|
 
      a = yield i
@@ -144,7 +144,7 @@
    end
 
 
-   def my_drop (number)
+   def drop (number)
 
      arr = Array.new
      length = 0
@@ -161,7 +161,7 @@
 
 
 
-    def my_dropwhile
+    def drop_while
       unless block_given?
         return
       end
@@ -186,7 +186,7 @@
     end
 
 
-   def my_cons  (num)
+   def each_cons  (num)
      arr = Array.new
      hash = Hash.new()
      position = 1
@@ -202,7 +202,7 @@
 
 
 
-   def my_entry (&blk)
+   def each_entry (&blk)
      arr = Array.new
      if blk
        each do |i|
@@ -221,7 +221,7 @@
    end
 
 
-   def my_eachwithindexj (&blk)
+   def each_with_index (&blk)
      arr = Array.new
      arr1 = Array.new
      j = 0
@@ -250,7 +250,7 @@
 
    end
 
-   def my_eachwithobject()
+   def each_with_object()
      arr = Array.new
      each do |i|
 
@@ -258,7 +258,7 @@
 
    end
 
-   def my_entries
+   def entries
      arr = Array.new
      each do |i|
        arr << i
@@ -267,7 +267,7 @@
 
 
 
-   def my_find (&blk)
+   def find (&blk)
      if blk
        each do |i|
 
@@ -293,7 +293,7 @@
    end
 
 
-   def my_findall (&blk)
+   def find_all (&blk)
      arr = Array.new
      if blk
        each do |i|
@@ -315,7 +315,7 @@
    end
 
 
-   def my_findindex (number = nil, &blk)
+   def find_index (number = nil, &blk)
      position = 0
      arr = Array.new
      if number == nil
@@ -349,7 +349,7 @@
    end
 
 
-   def my_first (number = nil)
+   def first (number = nil)
      arr = Array.new
      position = 1
 
@@ -373,7 +373,7 @@
 
 
 
-   def my_flatmap
+   def flat_map
         arr = Array.new
         each do |i|
           a = yield i
@@ -383,7 +383,7 @@
    end
 
 
-   def my_grep (number)
+   def grep (number)
      arr = Array.new
      each do |i|
        if i==number
@@ -393,7 +393,7 @@
      return arr
    end
 
-   def my_grepv (number)
+   def grep_v (number)
      arr = Array.new
      each do |i|
        if i != number
@@ -403,7 +403,7 @@
      return arr
    end
 
- def my_groupby
+ def group_by
 
    hash=Hash.new
    arr=Array.new
@@ -432,7 +432,7 @@
       return hash
     end
 
-   def my_include( number)
+   def include?( number)
 
      each do |i|
        if i == number
@@ -443,7 +443,7 @@
      end
    end
 
-   def my_inject (accumulator)
+   def inject (accumulator)
      each do |i|
        accumulator = yield accumulator, i
 
@@ -452,7 +452,7 @@
    end
 
 
-   def my_lazy
+   def lazy
      arr = Array.new
      each do |i|
        arr<<i
@@ -460,7 +460,7 @@
 
    end
 
-   def my_map
+   def map
      arr = Array.new
      each do |i|
        a = yield (i)
@@ -470,7 +470,7 @@
    end
 
 
-   def my_max (number = nil)
+   def max (number = nil)
      ini = 0
 
        each do |i|
@@ -482,7 +482,7 @@
    end
 
 
-   def my_maxby
+   def max_by
       ini = 0
       x = 0
     each do |i|
@@ -498,7 +498,7 @@
 
 
 
-   def my_member (num)
+   def member? (num)
      result = false
      each do |i|
        if i == num
@@ -509,7 +509,7 @@
    end
 
 
-   def my_min
+   def min
 
      arr = Array.new
      each do |i|
@@ -525,7 +525,7 @@
    end
 
 
-    def my_minby(n=nil)
+    def min_by(n=nil)
       if n==nil
         inject{|accumulator,element|(yield accumulator) <= (yield element) ? accumulator:element}
       else
@@ -550,7 +550,7 @@
       end
     end
 
-   def my_minmax
+   def minmax
      arr = Array.new
      each do |i|
        arr<<i
@@ -567,7 +567,7 @@
 
    end
 
-    def my_minmaxby
+    def minmax_by
       min=first
       max=first
       each do |i|
@@ -581,7 +581,7 @@
     end
 
 
-   def my_none(&blk)
+   def none?(&blk)
      result = true
      if blk
        each do |i|
@@ -605,7 +605,7 @@
    end
 
 
-   def my_once(&blk)
+   def one?(&blk)
      result = false
      flag = 0
      if blk
@@ -635,7 +635,7 @@
    end
 
 
-   def my_partition(&blk)
+   def partition(&blk)
      arr1 = Array.new
      arr2 = Array.new
 
@@ -663,7 +663,7 @@
    end
 
 
-   def my_reduce (*argv, &block)
+   def reduce (*argv, &block)
        initial=nil
        sym=nil
        if argv[0].is_a?(Numeric)
@@ -712,7 +712,9 @@
        end
      end
 
-   def my_reject(&blk)
+
+
+   def reject(&blk)
      arr = Array.new
      if blk
        each do |i|
@@ -733,7 +735,7 @@
 
 
 
-   def my_reverse
+   def reverse_each
      arr = Array.new
      arr2 = Array.new
      each do |i|
@@ -747,7 +749,7 @@
        return arr2
    end
 
-   def my_select
+   def select
      arr = Array.new
      each do |i|
        a = yield i
@@ -760,7 +762,7 @@
 
 
 
-    def my_sliceafter(n)
+    def slice_after(n)
       a = 0
       arr=Array.new
       result=Array.new
@@ -780,7 +782,8 @@
       result
     end
 
-    def my_slicebefore(n)
+
+    def slice_before(n)
       a=0
       arr=Array.new
       result=Array.new
@@ -801,7 +804,7 @@
     end
 
 
-    def my_slicewhen
+    def slice_when
       a=0
       arr=Array.new
       result=Array.new
@@ -822,7 +825,7 @@
     end
 
 
-   def my_sort
+   def sort
      arr = Array.new
      each do |i|
        arr<<i
@@ -836,7 +839,7 @@
      return b
    end
 
-   def my_sortby
+   def sort_by
      arr = Array.new
      each do |i|
        a = yield i
@@ -852,7 +855,7 @@
 
 
 
-   def my_sum (&blk)
+   def sum (&blk)
      sum = 0
      if blk
        each do |i|
@@ -873,7 +876,7 @@
 
 
 
-   def my_take (number)
+   def take (number)
      arr = Array.new
      position = 0
      each do |i|
@@ -886,7 +889,7 @@
    end
 
 
-   def my_takewhile(&blk)
+   def take_while(&blk)
      if blk
        each do |i|
          a = yield i
@@ -907,7 +910,7 @@
 
 
 
-   def my_toa
+   def to_a
 
       arr= Array.new
           each do |i|
@@ -916,7 +919,7 @@
    end
 
 
-   def my_unique
+   def uniq
      arr = Array.new
      each do |i|
        arr<< i
@@ -927,7 +930,7 @@
 
    end
 
-   def my_zip (var)
+   def zip (var)
      arr1 = Array.new
 
      each do |i|
@@ -944,7 +947,7 @@
      return arr2
    end
 
-   def my_eachcons (n)
+   def each_cons (n)
      arr1 = Array.new
      result = Array.new
 
@@ -964,7 +967,7 @@
    end
 
 
-   def my_eachwithobj
+   def each_with_object
      arr1 =Array.new
      each do |i|
       (yield i,arr1)
@@ -977,7 +980,7 @@
 
 
 
-    def my_eachslice (n)
+    def each_slice (n)
       arr1 = Array.new
       result = Array.new
 
@@ -1003,7 +1006,7 @@
         result
       end
 
-    def my_uniq
+    def uniq
       arr=Array.new
       each do |i|
         arr<<i
@@ -1022,9 +1025,6 @@
       end
       arr
     end
-
-
-
 
 
 end
